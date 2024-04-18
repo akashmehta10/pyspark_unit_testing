@@ -3,7 +3,7 @@ from pyspark.sql import SparkSession
 from business_logic_features.grades import get_grade
 
 
-class GradeRangeUnitTest(unittest.TestCase):
+class GradeUnitTest(unittest.TestCase):
     def setUp(self):
         self.spark = SparkSession.builder.appName("spark_unit_tests").enableHiveSupport().getOrCreate()
         self.spark.sparkContext.setLogLevel("ERROR")

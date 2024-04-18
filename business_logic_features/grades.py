@@ -2,7 +2,7 @@ from pyspark.sql import functions as F
 
 
 def get_grade(df):
-    # Add new column to represent if score is above or below average
+    # Add new column/feature to the dataframe to assign a grade
     df_with_feature = df.withColumn("grade",
                                     F.when(df["score"] >= 90, "A")
                                     .when((df["score"] >= 75) & (df["score"] < 90), "B")
